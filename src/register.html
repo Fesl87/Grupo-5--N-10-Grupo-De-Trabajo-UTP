@@ -9,10 +9,10 @@
 <body>
   <header>
     <div>
-    <img src="images/logo.jpg" alt="logo" class="logo" />
+    <img src="images/logo.jpg" alt="logo" class="logo" alt="Mi vendedor App" href="index.html"> 
     </div>
     <nav>
-      <a>Inicio</a>
+      <a href="index.html">Inicio</a>
       <a href="#register">Trabaja con nosotros</a>
       <a href="#contact">Contactanos</a>
     </nav>
@@ -20,7 +20,7 @@
     <section>
       <div class="form"> <!-- Formulario   -->
         <div class="box">
-          <div>
+          <div class="login-box">
             <form id="login-form">
               <h2>Registro</h2>
               <input type="text" placeholder="Nombres" id="firstname"/>
@@ -57,7 +57,7 @@
                   var longitude = posicion.coords.longitude;
                   output.innerHTML = "<p>No se pudo obtener tu ubicación</p>";
                   output.innerHTML ="<p>Latitud:"+latitude+"<br><br>Longitud:"+longitude+"</p";
-                  var imgURL = "https://maps.googleapis.com/maps/api/staticmap?center="+latitude+","+longitude+"&size=477x250&markers=color:red%7C"+latitude+","+longitude+"&key=AIzaSyB3z6OT7cWf_239xGVic6IKTF0NA2giqWo";
+                  var imgURL = "https://maps.googleapis.com/maps/api/staticmap?center="+latitude+","+longitude+"&size=477x295&markers=color:red%7C"+latitude+","+longitude+"&key=AIzaSyB3z6OT7cWf_239xGVic6IKTF0NA2giqWo";
                   output.innerHTML ="<img src='"+imgURL+"'>";
                 }
                 function error()
