@@ -1,60 +1,77 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
     <title>Mi vendedor App</title>
   </head>
-  <body>
-    <header>
-      <div>
-        <img src="images/logo.jpg" alt="logo" class="logo" />
-      </div>
-      <nav>
-        <a href="index.html">Inicio</a>
-        <a href="index.html">Trabaja con nosotros</a>
-        <a href="index.html">Contactanos</a>
-      </nav>
-    </header>
-    <section class="register-account">
-      <div class="signform">
-        <div class="left">
-          
-          <div class="bts">
-            <a href="#" class="fblogin social"
-              ><i class="fa fa-facebook"></i
-              ><span>Registrate con Facebook</span></a
-            >
-            <a href="#" class="twlogin social"
-              ><i class="fa fa-twitter"></i><span>Registrate con Twitter</span></a
-            >
-            <a href="#" class="gplogin social"
-              ><i class="fa fa-google-plus"></i
-              ><span>Registrate con Google</span></a
-            >
-          </div>
-        </div>
-        <div class="right">
-        
-          <div class="form">
-            <form class="login-form" id="login-form">
-              <input type="text" placeholder="Nombre completo" />
-              <input type="password" placeholder="Telefono" />
-              <input type="text" placeholder="Correo" />
-              
-              <input
-                class="subbt"
-                type="submit"
-                value="Registrar"
-                style="border: none"
-              />
+<body>
+  <header>
+    <div>
+    <img src="images/logo.jpg" alt="logo" class="logo" />
+    </div>
+    <nav>
+      <a>Inicio</a>
+      <a href="#register">Trabaja con nosotros</a>
+      <a href="#contact">Contactanos</a>
+    </nav>
+  </header>
+    <section>
+      <div class="form"> <!-- Formulario   -->
+        <div class="box">
+          <div>
+            <form id="login-form">
+              <h2>Registro</h2>
+              <input type="text" placeholder="Nombres" id="firstname"/>
+              <input type="text" placeholder="Apellidos" id="lastname"/>
+              <input type="tel" placeholder="Telefono" id="telephone"/>
+              <input type="email" placeholder="Email" id="email"/>
+              <input type="text" placeholder="Ciudad" id="city"/>
+              <input type="password" placeholder="Password" id="password"/>
+              <input type="password" placeholder="Confirmar password" id="password-confirmation"/>
+              <input class="subbt"  type="submit" value="Sign In"/>
             </form>
-        
           </div>
         </div>
-      </div>
+        <div class ="maps">
+            <button class="subbt" onclick="findMe()">Mostrar ubicación</button>
+            <div id="map">
+              <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3z6OT7cWf_239xGVic6IKTF0NA2giqWo">
+              </script>
+              <script>
+                function findMe()
+                {
+                var output = document.getElementById('map');
+                // Verificar si soporta geolocalizacion
+                  if (navigator.geolocation) 
+                    {
+                    output.innerHTML = "<p>Tu navegador soporta Geolocalizacion</p>";
+                    }else{
+                          output.innerHTML = "<p>Tu navegador no soporta Geolocalizacion</p>";
+                          }
+                //Obtenemos latitud y longitud
+                function localizacion(posicion)
+                {
+                  var latitude = posicion.coords.latitude;
+                  var longitude = posicion.coords.longitude;
+                  output.innerHTML = "<p>No se pudo obtener tu ubicación</p>";
+                  output.innerHTML ="<p>Latitud:"+latitude+"<br><br>Longitud:"+longitude+"</p";
+                  var imgURL = "https://maps.googleapis.com/maps/api/staticmap?center="+latitude+","+longitude+"&size=477x250&markers=color:red%7C"+latitude+","+longitude+"&key=AIzaSyB3z6OT7cWf_239xGVic6IKTF0NA2giqWo";
+                  output.innerHTML ="<img src='"+imgURL+"'>";
+                }
+                function error()
+                {
+                output.innerHTML = "<p>No se pudo obtener tu ubicación</p>";
+                }
+                navigator.geolocation.getCurrentPosition(localizacion,error);
+                }
+              </script>
+            </div>
+        </div>
+      </div> <!-- fin Formulario   -->
     </section>
+</body>
     <footer>
       <h3>copyright 2021</h3>
     </footer>
