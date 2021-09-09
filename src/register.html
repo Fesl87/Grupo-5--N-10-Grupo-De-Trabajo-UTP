@@ -58,7 +58,7 @@
                   output.innerHTML = "<p>No se pudo obtener tu ubicación</p>";
                   output.innerHTML ="<p>Latitud:"+latitude+"<br><br>Longitud:"+longitude+"</p";
                   var imgURL = "https://maps.googleapis.com/maps/api/staticmap?center="+latitude+","+longitude+"&size=477x295&markers=color:red%7C"+latitude+","+longitude+"&key=AIzaSyB3z6OT7cWf_239xGVic6IKTF0NA2giqWo";
-                  output.innerHTML ="<img src='"+imgURL+"'>";
+                  output.innerHTML ="<img src='"+imgURL+"' class='mapa'>";
                 }
                 function error()
                 {
