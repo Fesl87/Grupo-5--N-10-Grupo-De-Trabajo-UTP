@@ -6,7 +6,7 @@ body {
 }
 
 header {
-  width: 100%; /* Establecemos que el header abarque el 100% del documento */
+  width: 100%; /* Establecemos que el header abarque el 100% del body */
   overflow: hidden; /* Eliminamos errores de float */
   background: #252932;
   margin-bottom: 20px;
@@ -20,17 +20,21 @@ header {
   overflow: hidden; /* Eliminamos errores de float */
 }
 
-header .logo {
+.logo {
   color: #f2f2f2;
   font-size: 50px;
   line-height: 200px;
   float: left;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  width: 40%;
+  max-width: 100%;
+  height: auto;
 }
 
 header nav {
-  float: right;
+  float: left;
   line-height: 200px;
+  width: 60%;
 }
 
 header nav a {
@@ -50,10 +54,13 @@ header nav a:hover {
   background: #4bf529;
   border-radius: 50px;
 }
-.imageheader {
+
+/*.imageheader {
   background-image: url("../images/image-header.jpg");
-  height: 200px;
-}
+  height: 40%;
+  width:40%;
+  background:white;
+}*/
 
 .registerlogo {
   width: 25%;
@@ -110,10 +117,10 @@ footer {
 }
 
 .buttonindex {
-  width: 250px;
-  height: 100px;
+  width: 80%;
+  /*height: 100px;*/
   text-decoration: none;
-  padding: 10px;
+  padding: 10%;
   font-weight: 600;
   font-size: 20px;
   color: #252932be;
@@ -122,6 +129,7 @@ footer {
   border: 2px solid #252932be;
   justify-content: center;
   align-items: center;
+  /*box-sizing: content-box;*/
 }
 .buttonindex:hover {
   color: #2d8b01;
@@ -172,7 +180,8 @@ footer {
   width: 50%;
   float: left;
   background: #252932;
-  height: auto;
+  height: auto
+  position: absolute;
 }
 .loginform {
   width: 80%;
