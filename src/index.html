@@ -3,26 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no,initial-scale=1.0, maximum-scale=1.0 ,minimum-scale=1.0" >
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <title>Mi vendedor App</title>
 </head>
 
 <body>
-    <header>
+    <div class="contenedor">
+        <header>
         <div>
             <img src="images/Logo.jpg" alt="logo" class="logo">
         </div>
         <nav>
-            <a>Inicio</a>
             <a href="#register">Trabaja con nosotros</a>
             <a href="#contact">Contactanos</a>
-             <a href="">Iniciar sesion</a>
+            <a href="">Iniciar sesion</a>
         </nav>
         
     </header>
 
-    <div id="register">
+    <div id="register" class="register">
         <img src="images/vendedor.jpg" class="registerlogo">
         <section class="registerinf"> 
             <h1>TRABAJA CON NOSOTROS</h1>
@@ -30,7 +30,6 @@
             <br> <h3>Haz crecer tus ventas y consigue nuevos clientes de una forma facil.</h3>
         </section>
         <section class="registerlink">
-            <br><br><br><br><br>
             
             <button class="buttonindex" onclick="location.href='register.html'">Registrate</button>
         </section>
@@ -42,6 +41,7 @@
     <footer>
         <h3>copyright 2021</h3>
     </footer>
+    </div>
 </body>
 
 </html>
